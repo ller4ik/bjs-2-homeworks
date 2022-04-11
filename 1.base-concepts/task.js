@@ -1,17 +1,20 @@
-"use strict";
+"use strict"
 
 function solveEquation(a, b, c) {
     let arr;
-    let x = -b / (2 * a);
-    let x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
-    let x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-    let discriminant = b ** 2 - 4 * a * c;
+    let d = b ** 2 - 4 * a * c;
+    let x;
+    let x1;
+    let x2;
 
-    if (discriminant < 0) {
+    if (d < 0) {
         arr = [];
-    } else if (discriminant == 0) {
+    } else if (d == 0) {
+        x = -b / (2 * a);
         arr = [x];
-    } else if (discriminant > 0) {
+    } else if (d > 0) {
+        x1 = (-b + Math.sqrt(d)) / (2 * a);
+        x2 = (-b - Math.sqrt(d)) / (2 * a);
         arr = [x1, x2];
     }
     return arr;
